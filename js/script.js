@@ -20,6 +20,32 @@ if (mobileMenuToggle) {
     });
 }
 
+// Menu Modal Functions
+function openMenuModal() {
+    document.getElementById('menuModal').style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeMenuModal() {
+    document.getElementById('menuModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('menuModal');
+    if (event.target == modal) {
+        closeMenuModal();
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeMenuModal();
+    }
+});
+
 // Close mobile menu when clicking on a link
 const navLinks = document.querySelectorAll('.nav-menu a');
 navLinks.forEach(link => {

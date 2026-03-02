@@ -143,7 +143,7 @@ h1, h2, h3 {
 .hero h1 {
     font-size: 5rem;
     color: var(--dark);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-weight: 700;
     letter-spacing: -2px;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
@@ -152,7 +152,7 @@ h1, h2, h3 {
 .subtitle {
     font-size: 3rem;
     color: var(--dark);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-weight: 400;
 }
 
@@ -168,7 +168,7 @@ h1, h2, h3 {
     font-size: 2.5rem;
     color: var(--primary-color);
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 10px;
     text-decoration: none;
     display: block;
 }
@@ -275,6 +275,7 @@ section h2 {
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
 .menu-card:hover {
@@ -315,6 +316,98 @@ section h2 {
     text-align: center;
 }
 
+/* Menu Modal Popup */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--light);
+    margin: 2% auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+    animation: slideDown 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: var(--gray);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--primary-color);
+}
+
+.modal-content h2 {
+    margin-bottom: 30px;
+    color: var(--dark);
+}
+
+.modal-menu-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+.modal-menu-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.modal-menu-image:last-child {
+    margin-bottom: 0;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* About Section */
 .about-content {
     max-width: 800px;
@@ -343,7 +436,7 @@ section h2 {
 }
 
 .location-photo {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
     border-radius: 15px;
     overflow: hidden;
@@ -353,6 +446,8 @@ section h2 {
 .location-photo img {
     width: 100%;
     height: auto;
+    max-height: 600px;
+    object-fit: cover;
     display: block;
 }
 
@@ -506,12 +601,35 @@ section h2 {
     }
 
     .hero-buttons {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .hero-buttons .btn {
+        flex: 1;
+        min-width: 140px;
     }
 
     .menu-images {
         grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 5% auto;
+    }
+
+    .modal-menu-container {
+        max-height: 60vh;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions .btn {
+        width: 100%;
     }
 
     .gallery-grid {
@@ -542,6 +660,25 @@ section h2 {
 
     .hero-phone {
         font-size: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .close-modal {
+        font-size: 30px;
+        top: 10px;
+        right: 15px;
     }
 
     .gallery-grid {

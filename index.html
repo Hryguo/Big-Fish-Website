@@ -41,7 +41,8 @@
         <div class="hero-content">
             <h1>Big Fish Chinese Cafe</h1>
             <div class="hero-buttons">
-                <a href="https://www.clover.com/online-ordering/big-fish-chinese-cafe-san-jose" class="btn btn-primary" target="_blank">Menu/Order Online</a>
+                <a href="https://www.clover.com/online-ordering/big-fish-chinese-cafe-san-jose" class="btn btn-primary" target="_blank">Order Online</a>
+                <a href="tel:4084483748" class="btn btn-primary">Call Us</a>
             </div>
             <a href="tel:4084483748" class="hero-phone">(408) 448-3748</a>
             <p class="subtitle">중 화 요 리</p>
@@ -54,21 +55,17 @@
             <h2>Our Menu</h2>
             <p class="section-subtitle">Explore our delicious selection of Chinese cuisine</p>
             <div class="menu-images">
-                <div class="menu-card">
-                    <a href="menu.pdf" target="_blank">
-                        <img src="images/menu1.jpg" alt="Menu Page 1">
-                        <div class="menu-overlay">
-                            <span>View Menu</span>
-                        </div>
-                    </a>
+                <div class="menu-card" onclick="openMenuModal()">
+                    <img src="images/menu1.jpg" alt="Menu Page 1">
+                    <div class="menu-overlay">
+                        <span>View Full Menu</span>
+                    </div>
                 </div>
-                <div class="menu-card">
-                    <a href="menu.pdf" target="_blank">
-                        <img src="images/menu2.jpg" alt="Menu Page 2">
-                        <div class="menu-overlay">
-                            <span>View Menu</span>
-                        </div>
-                    </a>
+                <div class="menu-card" onclick="openMenuModal()">
+                    <img src="images/menu2.jpg" alt="Menu Page 2">
+                    <div class="menu-overlay">
+                        <span>View Full Menu</span>
+                    </div>
                 </div>
             </div>
             <div class="menu-cta">
@@ -76,6 +73,22 @@
             </div>
         </div>
     </section>
+
+    <!-- Menu Modal Popup -->
+    <div id="menuModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeMenuModal()">&times;</span>
+            <h2>Our Menu</h2>
+            <div class="modal-menu-container">
+                <img src="images/menu1.jpg" alt="Menu Page 1" class="modal-menu-image">
+                <img src="images/menu2.jpg" alt="Menu Page 2" class="modal-menu-image">
+            </div>
+            <div class="modal-actions">
+                <a href="images/menu.pdf" download class="btn btn-primary">Download PDF Menu</a>
+                <button onclick="closeMenuModal()" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="about-section">
