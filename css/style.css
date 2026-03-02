@@ -51,7 +51,7 @@ h1, h2, h3 {
 }
 
 .logo img {
-    height: 50px;
+    height: 80px;
     width: auto;
 }
 
@@ -93,12 +93,13 @@ h1, h2, h3 {
 .hero {
     margin-top: 80px;
     position: relative;
-    min-height: 600px;
+    min-height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    background: #1a1a1a;
+    overflow: hidden;
 }
 
 .hero-image {
@@ -114,27 +115,45 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3;
+    animation: heroImageFadeIn 1s ease-out;
+}
+
+/* Semi-transparent overlay that fades in after image */
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    opacity: 0;
+    animation: overlayFadeIn 0.8s ease-out 1.2s forwards;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 40px 20px;
+    padding: 60px 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: contentFadeIn 0.8s ease-out 2s forwards;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-size: 5rem;
+    color: var(--dark);
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .subtitle {
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--dark);
-    margin-bottom: 30px;
-    font-weight: 300;
+    margin-bottom: 40px;
+    font-weight: 400;
 }
 
 .hero-buttons {
@@ -142,6 +161,48 @@ h1, h2, h3 {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.hero-phone {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-top: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Animations */
+@keyframes heroImageFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Buttons */
@@ -275,6 +336,26 @@ section h2 {
     margin-top: 30px;
 }
 
+/* Location Photo Section */
+.location-section {
+    background: var(--light-gray);
+    padding: 80px 0;
+}
+
+.location-photo {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.location-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Gallery Section */
 .gallery-section {
     background: var(--light-gray);
@@ -400,12 +481,28 @@ section h2 {
         display: flex;
     }
 
+    .logo img {
+        height: 60px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-content {
+        padding: 40px 30px;
+    }
+
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .subtitle {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .hero-phone {
+        font-size: 1.8rem;
     }
 
     .hero-buttons {
@@ -431,12 +528,20 @@ section h2 {
 }
 
 @media (max-width: 480px) {
+    .logo img {
+        height: 50px;
+    }
+
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    .hero-phone {
+        font-size: 1.5rem;
     }
 
     .gallery-grid {
