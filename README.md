@@ -2,12 +2,6 @@
 
 A modern, professional website for Big Fish Chinese Cafe in San Jose, CA.
 
-## 🚀 Quick Start
-
-1. **Read the SETUP-GUIDE.md** - Complete step-by-step instructions
-2. **Download images** - Use IMAGE-DOWNLOAD-GUIDE.md for help
-3. **Upload to Netlify** - Free hosting, just drag and drop!
-
 ## 📁 What's Included
 
 - **index.html** - Your complete website
