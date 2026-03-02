@@ -56,18 +56,6 @@ If you run into issues:
 2. Make sure all files are in the right folders
 3. Verify image filenames match exactly
 
-## 💰 Cost Savings
-
-**Before:** $16-35/month on Wix
-**After:** $0/month on Netlify
-**Annual Savings:** $192-420! 🎉
-
-## 🌐 Going Live
-
-1. Upload to Netlify (free)
-2. Point your domain
-3. Wait 15-60 minutes
-4. Your site is live!
 
 ---
 
