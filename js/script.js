@@ -1,3 +1,47 @@
+// =============================================
+// PROMOTION POPUP
+// =============================================
+
+function openPromo() {
+    document.getElementById('promoModal').classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePromo() {
+    const modal = document.getElementById('promoModal');
+    modal.classList.remove('is-open');
+    document.body.style.overflow = 'auto';
+
+    // Respect "don't show today" checkbox
+    if (document.getElementById('promoDontShow').checked) {
+        const today = new Date().toDateString();
+        sessionStorage.setItem('promoHiddenUntil', today);
+    }
+}
+
+// Show promo on load (unless dismissed today)
+window.addEventListener('DOMContentLoaded', () => {
+    const hiddenUntil = sessionStorage.getItem('promoHiddenUntil');
+    const today = new Date().toDateString();
+    if (hiddenUntil !== today) {
+        setTimeout(openPromo, 900); // slight delay so page loads first
+    }
+});
+
+// Close when clicking the backdrop
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('promoModal');
+    if (e.target === modal) closePromo();
+});
+
+// Close with Escape key (extend existing listener)
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closePromo();
+        closeMenuModal();
+    }
+});
+
 // Mobile Menu Toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -39,12 +83,7 @@ window.onclick = function(event) {
     }
 }
 
-// Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        closeMenuModal();
-    }
-});
+// Close modal with Escape key – handled by unified listener above
 
 // Close mobile menu when clicking on a link
 const navLinks = document.querySelectorAll('.nav-menu a');
