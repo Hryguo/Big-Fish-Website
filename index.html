@@ -212,6 +212,30 @@
         </div>
     </footer>
 
+    <!-- Promotion Popup -->
+    <div id="promoModal" class="promo-modal" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
+        <div class="promo-modal-content">
+            <button class="promo-close" onclick="closePromo()" aria-label="Close promotion">&times;</button>
+            <div class="promo-image-wrap">
+                <img src="images/promotion.jpg" alt="Big Fish Chinese Cafe Summer Promotion – Free Tea Refills">
+            </div>
+            <div class="promo-body">
+                <div class="promo-badge">🍵 Limited Time Offer</div>
+                <h2 id="promoTitle" class="promo-title">Beat the Heat at Big Fish Chinese Cafe</h2>
+                <p class="promo-highlight">FREE Refills on All Iced Tea &amp; Thai Tea — Dine In Only</p>
+                <p class="promo-copy">As the sun comes out, cool down with us! Come enjoy a fresh, reasonably priced authentic Chinese meal and stay refreshed all season long. Our neighbors deserve the best.</p>
+                <div class="promo-cta-group">
+                    <p class="promo-instruction">📲 Show this to your server to redeem</p>
+                    <a href="https://www.clover.com/online-ordering/big-fish-chinese-cafe-san-jose" class="btn btn-primary promo-btn" target="_blank">Order Online</a>
+                    <a href="tel:4084483748" class="btn btn-secondary promo-btn">Call to Reserve</a>
+                </div>
+                <label class="promo-dismiss">
+                    <input type="checkbox" id="promoDontShow"> Don't show again today
+                </label>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
