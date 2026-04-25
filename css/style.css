@@ -793,6 +793,203 @@ section h2 {
     }
 }
 
+/* =============================================
+   PROMOTION POPUP
+   ============================================= */
+
+.promo-modal {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: promoBackdropIn 0.35s ease;
+}
+
+.promo-modal.is-open {
+    display: flex;
+}
+
+@keyframes promoBackdropIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.promo-modal-content {
+    position: relative;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+    animation: promoSlideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    max-height: 92vh;
+    overflow-y: auto;
+}
+
+@keyframes promoSlideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Close button */
+.promo-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.promo-close:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Image */
+.promo-image-wrap {
+    width: 100%;
+    line-height: 0;
+}
+
+.promo-image-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Text body */
+.promo-body {
+    padding: 24px 28px 28px;
+    text-align: center;
+}
+
+.promo-badge {
+    display: inline-block;
+    background: #fff4e5;
+    color: #b05a00;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    border: 1px solid #f5c884;
+}
+
+.promo-title {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.55rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.promo-highlight {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    padding: 10px 16px;
+    background: #fff0f0;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    text-align: left;
+}
+
+.promo-copy {
+    font-size: 0.97rem;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* CTA group */
+.promo-cta-group {
+    margin-bottom: 18px;
+}
+
+.promo-instruction {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+}
+
+.promo-btn {
+    margin: 5px 6px;
+    font-size: 0.95rem;
+    padding: 12px 28px;
+}
+
+/* "Don't show again" checkbox */
+.promo-dismiss {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-size: 0.82rem;
+    color: #aaa;
+    cursor: pointer;
+    user-select: none;
+}
+
+.promo-dismiss input {
+    accent-color: var(--primary-color);
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 540px) {
+    .promo-modal-content {
+        border-radius: 14px;
+        max-height: 95vh;
+    }
+
+    .promo-body {
+        padding: 18px 18px 22px;
+    }
+
+    .promo-title {
+        font-size: 1.25rem;
+    }
+
+    .promo-highlight {
+        font-size: 0.95rem;
+    }
+
+    .promo-btn {
+        display: block;
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
