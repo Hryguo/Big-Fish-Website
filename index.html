@@ -160,9 +160,18 @@ section{padding:72px 0}
 .menu-nav .wrap{display:flex;gap:10px}
 .menu-nav a{flex:0 0 auto;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid rgba(43,33,24,.12);color:var(--ink);font-size:.85rem;font-weight:600}
 .menu-nav a:hover{border-color:var(--red);color:var(--red)}
-.menu-cat{margin-bottom:48px}
-.menu-cat h3{font-size:1.35rem;color:var(--red-dark);border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:6px;margin-bottom:18px}
-.menu-cat h3 .zh{font-size:1.05rem;color:var(--ink-soft);font-family:inherit;margin-left:8px}
+.menu-cat{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden}
+.menu-cat summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;cursor:pointer;user-select:none;list-style:none}
+.menu-cat summary::-webkit-details-marker{display:none}
+.menu-cat summary:hover{background:var(--cream)}
+.menu-cat h3{font-size:1.12rem;color:var(--red-dark);margin:0}
+.menu-cat h3 .zh{font-size:.95rem;color:var(--ink-soft);font-family:inherit;margin-left:8px}
+.cat-meta{color:var(--ink-soft);font-size:.84rem;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.cat-meta .chev{display:inline-block;transition:transform .2s ease;color:var(--red);font-weight:700}
+details[open] > summary .chev{transform:rotate(90deg)}
+details[open] > summary{border-bottom:1px dashed rgba(43,33,24,.14)}
+.menu-cat > p{padding:12px 20px 0}
+.menu-cat .menu-items{padding:10px 20px 18px}
 .menu-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:6px 40px}
 .mi{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px dashed rgba(43,33,24,.14)}
 .mi .n{font-weight:600}
@@ -416,7 +425,7 @@ footer .legal{opacity:.7;margin-top:10px}
   <div class="section-head" style="margin-bottom:18px">
     <span class="eyebrow">Full Menu</span>
     <h2>Our Menu</h2>
-    <p>Lunch &amp; dinner daily. Order online for pickup or delivery, or dine in with us.</p>
+    <p>Lunch &amp; dinner daily. Tap a category to see dishes &amp; prices — or order online directly.</p>
   </div>
 
   <nav class="menu-nav" aria-label="Menu categories">
@@ -438,8 +447,8 @@ footer .legal{opacity:.7;margin-top:10px}
 
   <div class="wrap" style="padding-top:34px">
 
-    <div class="menu-cat" id="m-lunch">
-      <h3>Lunch Specials <span class="zh">特价午餐</span></h3>
+    <details class="menu-cat" id="m-lunch">
+      <summary><h3>Lunch Specials <span class="zh">特价午餐</span></h3><span class="cat-meta">18 items <span class="chev">▸</span></span></summary>
       <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:14px">Weekdays before 2:30 PM only · Served with hot &amp; sour soup, broccoli &amp; steamed rice · No soup for to-go orders</p>
       <div class="menu-items">
         <div class="mi"><span class="n">Orange Chicken <span class="zh">陈皮鸡</span></span><span class="p">$14.95</span></div>
@@ -461,10 +470,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Fish Fillet w/ Black Bean Sauce <span class="zh">豉汁鱼片</span></span><span class="p">$15.95</span></div>
         <div class="mi"><span class="n">Sautéed Fish Fillet w/ Wine Sauce <span class="zh">糟溜鱼片</span></span><span class="p">$15.95</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-appetizers">
-      <h3>Appetizers <span class="zh">头台</span></h3>
+    <details class="menu-cat" id="m-appetizers">
+      <summary><h3>Appetizers <span class="zh">头台</span></h3><span class="cat-meta">15 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Handmade Egg Rolls <span class="zh">春卷</span><span class="note">4 pieces</span></span><span class="p">$8.95</span></div>
         <div class="mi"><span class="n">Fried Pork Wontons <span class="zh">炸馄饨（含肉馅）</span><span class="note">5 pieces</span></span><span class="p">$8.95</span></div>
@@ -482,10 +491,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Pan-Fried Pork Buns <span class="zh">生煎包</span><span class="note">6 pieces</span></span><span class="p">$15.95</span></div>
         <div class="mi"><span class="n">Xiao Long Bao <span class="zh">小笼包</span></span><span class="p">$15.95</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-soups">
-      <h3>Soups <span class="zh">汤 <span style="font-size:.75rem;color:var(--ink-soft);font-family:inherit">(Small / Large)</span></span></h3>
+    <details class="menu-cat" id="m-soups">
+      <summary><h3>Soups <span class="zh">汤 <span style="font-size:.75rem;color:var(--ink-soft);font-family:inherit">(Small / Large)</span></span></h3><span class="cat-meta">10 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Hot &amp; Sour Soup <span class="zh">酸辣汤</span> <span class="spicy">🌶</span></span><span class="p">$13.95 / 20.95</span></div>
         <div class="mi"><span class="n">Wonton Soup <span class="zh">馄饨汤</span></span><span class="p">$13.95 / 20.95</span></div>
@@ -498,10 +507,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Egg Flower Bean &amp; Mushroom Soup <span class="zh">蔬菜蛋花汤</span></span><span class="p">$13.95 / 20.95</span></div>
         <div class="mi"><span class="n">Egg Drop Soup <span class="zh">纯蛋花汤</span></span><span class="p">$13.95 / 20.95</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-chicken">
-      <h3>Chicken &amp; Duck <span class="zh">家禽</span></h3>
+    <details class="menu-cat" id="m-chicken">
+      <summary><h3>Chicken &amp; Duck <span class="zh">家禽</span></h3><span class="cat-meta">25 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Orange Chicken <span class="zh">陈皮鸡</span></span><span class="p">$17.95</span></div>
         <div class="mi"><span class="n">Moo Shu Chicken <span class="zh">木须鸡</span></span><span class="p">$18.95</span></div>
@@ -529,10 +538,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Salt &amp; Pepper Chicken Wings <span class="zh">椒盐鸡翅</span><span class="note">12 pieces</span></span><span class="p">$18.95</span></div>
         <div class="mi"><span class="n">House Special Tea Smoked Duck <span class="zh">金牌樟茶鸭</span><span class="note">half duck</span></span><span class="p">$25.95</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-pork">
-      <h3>Pork <span class="zh">猪肉</span></h3>
+    <details class="menu-cat" id="m-pork">
+      <summary><h3>Pork <span class="zh">猪肉</span></h3><span class="cat-meta">10 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Moo Shu Pork <span class="zh">木须肉</span></span><span class="p">$18.95</span></div>
         <div class="mi"><span class="n">Sweet &amp; Sour Pork <span class="zh">咕咾肉</span></span><span class="p">$17.95</span></div>
@@ -545,10 +554,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">House Special Braised Pork Belly <span class="zh">私房红烧肉</span></span><span class="p">$21.95</span></div>
         <div class="mi"><span class="n">Tangsuyuk — Korean Sweet &amp; Sour Pork <span class="zh">韩式糖醋肉 탕수육</span></span><span class="p">$19.95</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-beef">
-      <h3>Beef &amp; Lamb <span class="zh">牛羊肉</span></h3>
+    <details class="menu-cat" id="m-beef">
+      <summary><h3>Beef &amp; Lamb <span class="zh">牛羊肉</span></h3><span class="cat-meta">18 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Broccoli Beef <span class="zh">芥兰牛肉</span></span><span class="p">$18.95</span></div>
         <div class="mi"><span class="n">Sesame Beef <span class="zh">芝麻牛肉</span></span><span class="p">$18.95</span></div>
@@ -569,10 +578,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Cumin Lamb Stir Fry <span class="zh">孜然羊肉</span> <span class="spicy">🌶</span></span><span class="p">$23.95</span></div>
         <div class="mi"><span class="n">Sizzling Lamb <span class="zh">铁板姜葱羊</span></span><span class="p">$23.95</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-seafood">
-      <h3>Seafood <span class="zh">海鲜</span></h3>
+    <details class="menu-cat" id="m-seafood">
+      <summary><h3>Seafood <span class="zh">海鲜</span></h3><span class="cat-meta">24 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Salt &amp; Pepper Fish Fillet <span class="zh">椒盐鱼片</span></span><span class="p">$20.95</span></div>
         <div class="mi"><span class="n">Korean Seafood Combo <span class="zh">八宝菜</span></span><span class="p">$21.95</span></div>
@@ -599,10 +608,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Seafood Tofu Clay Pot <span class="zh">海鲜豆腐煲</span></span><span class="p">$23.95</span></div>
         <div class="mi"><span class="n">Steamed Scallops w/ Vermicelli &amp; Garlic <span class="zh">蒜蓉粉丝蒸扇贝</span><span class="note">8 pieces</span></span><span class="p">$23.95</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-veggie">
-      <h3>Vegetables &amp; Tofu <span class="zh">素菜</span></h3>
+    <details class="menu-cat" id="m-veggie">
+      <summary><h3>Vegetables &amp; Tofu <span class="zh">素菜</span></h3><span class="cat-meta">16 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Dry Sautéed String Beans <span class="zh">干煸四季豆</span></span><span class="p">$15.95</span></div>
         <div class="mi"><span class="n">Eggplant w/ Garlic Sauce <span class="zh">鱼香茄子</span> <span class="spicy">🌶</span></span><span class="p">$17.95</span></div>
@@ -621,10 +630,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Grilled Potato, Green Pepper &amp; Eggplant <span class="zh">地三鲜</span></span><span class="p">$17.95</span></div>
         <div class="mi"><span class="n">Eggplant w/ Salted Fish &amp; Chicken Clay Pot <span class="zh">咸鱼鸡粒茄子煲</span></span><span class="p">$21.95</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-eggfooyoung">
-      <h3>Egg Foo Young <span class="zh">芙蓉系列</span></h3>
+    <details class="menu-cat" id="m-eggfooyoung">
+      <summary><h3>Egg Foo Young <span class="zh">芙蓉系列</span></h3><span class="cat-meta">6 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Egg Foo Young w/ Vegetables <span class="zh">素芙蓉</span></span><span class="p">$18.95</span></div>
         <div class="mi"><span class="n">Egg Foo Young w/ Chicken <span class="zh">鸡芙蓉</span></span><span class="p">$19.95</span></div>
@@ -633,10 +642,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Egg Foo Young w/ Prawn <span class="zh">虾芙蓉</span></span><span class="p">$21.95</span></div>
         <div class="mi"><span class="n">House Special Egg Foo Young <span class="zh">什锦芙蓉</span></span><span class="p">$21.95</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-rice">
-      <h3>Chow Mein, Fried Rice &amp; Noodles <span class="zh">主食</span></h3>
+    <details class="menu-cat" id="m-rice">
+      <summary><h3>Chow Mein, Fried Rice &amp; Noodles <span class="zh">主食</span></h3><span class="cat-meta">32 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Chicken Chow Mein or Fried Rice <span class="zh">鸡肉炒面或炒饭</span></span><span class="p">$13.95</span></div>
         <div class="mi"><span class="n">Beef Chow Mein or Fried Rice <span class="zh">牛肉炒面或炒饭</span></span><span class="p">$15.95</span></div>
@@ -671,10 +680,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Dried Scallop &amp; Egg White Fried Rice <span class="zh">瑶柱蛋白炒饭</span></span><span class="p">$19.95</span></div>
         <div class="mi"><span class="n">Steamed Rice <span class="zh">白米饭</span></span><span class="p">$2.50</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-family">
-      <h3>Family Meals &amp; Party Trays <span class="zh">家庭套餐 · 派对大盘</span></h3>
+    <details class="menu-cat" id="m-family">
+      <summary><h3>Family Meals &amp; Party Trays <span class="zh">家庭套餐 · 派对大盘</span></h3><span class="cat-meta">9 items <span class="chev">▸</span></span></summary>
       <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:14px">Family meals: choose dishes for the whole table, served family-style. Party trays feed a crowd — call (408) 448-3748 for tray menu details.</p>
       <div class="menu-items">
         <div class="mi"><span class="n">Family Meal A <span class="zh">家庭套餐 A</span><span class="note">2 people minimum</span></span><span class="p">$21 / person</span></div>
@@ -687,10 +696,10 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">Party Tray G <span class="zh">派对大盘 G</span></span><span class="p">$65 / Large $130</span></div>
         <div class="mi"><span class="n">Item Change <span class="zh">换菜（每项）</span></span><span class="p">$3.00</span></div>
       </div>
-    </div>
+    </details>
 
-    <div class="menu-cat" id="m-desserts">
-      <h3>Desserts &amp; Drinks <span class="zh">甜点 · 饮品</span></h3>
+    <details class="menu-cat" id="m-desserts">
+      <summary><h3>Desserts &amp; Drinks <span class="zh">甜点 · 饮品</span></h3><span class="cat-meta">19 items <span class="chev">▸</span></span></summary>
       <div class="menu-items">
         <div class="mi"><span class="n">Pumpkin Cake <span class="zh">南瓜饼</span><span class="note">6 pieces</span></span><span class="p">$8.95</span></div>
         <div class="mi"><span class="n">Rice Dumplings w/ Rice Wine Soup <span class="zh">酒酿汤圆</span></span><span class="p">$9.95 / 19.95</span></div>
@@ -712,7 +721,7 @@ footer .legal{opacity:.7;margin-top:10px}
         <div class="mi"><span class="n">K-J Chardonnay (glass / bottle) <span class="zh">K-J 霞多丽干白</span></span><span class="p">$7.95 / 39.75</span></div>
         <div class="mi"><span class="n">Corkage Fee <span class="zh">开瓶费</span></span><span class="p">$20.00</span></div>
       </div>
-    </div>
+    </details>
 
     <p class="menu-footnote">Prices subject to change. Please call us at <a href="tel:4084483748">(408) 448-3748</a> for the latest menu and daily specials.</p>
     <div class="menu-cta">
@@ -847,6 +856,18 @@ footer .legal{opacity:.7;margin-top:10px}
     badge.classList.add('closed');
     if (status) status.innerHTML = '<strong style="color:#A82B22">○ Closed</strong> · opens ' + nextLabel;
   }
+})();
+
+(function(){
+  function openTarget(hash){
+    if(!hash || hash.indexOf('#m-')!==0) return;
+    var d=document.querySelector(hash);
+    if(d && d.tagName==='DETAILS') d.open=true;
+  }
+  document.querySelectorAll('a[href^="#m-"]').forEach(function(a){
+    a.addEventListener('click',function(){ openTarget(a.getAttribute('href')); });
+  });
+  openTarget(location.hash);
 })();
 </script>
 </body>
