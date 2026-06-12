@@ -1,0 +1,13 @@
+{
+  "name": "Big Fish Chinese Cafe 大魚飯店",
+  "short_name": "Big Fish",
+  "description": "Chinese & Korean-Chinese food in San Jose — huge portions, honest prices. Order online for pickup or delivery.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FBF6EC",
+  "theme_color": "#A82B22",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "favicon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
